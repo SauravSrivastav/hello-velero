@@ -42,7 +42,7 @@ resource "google_project_iam_binding" "object_admin" {
     "serviceAccount:${google_service_account.this.email}"
   ]
   condition {
-    expression = "resource.name.startsWith(\"projects/_/buckets/${var.cluster_name}/objects/\")"
+    expression = "resource.name.startsWith(\"projects/_/buckets/velero-${var.cluster_name}/objects/\")"
     title = "bucket"
   }
 }
